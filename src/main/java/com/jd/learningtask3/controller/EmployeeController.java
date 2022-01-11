@@ -35,8 +35,9 @@ public class EmployeeController {
 //        }
     }
 
-    @PostMapping
+    @PostMapping("/addEmployee")
     public void insertEmployee(ToDoList toDoList){
+        System.out.println(toDoList.toString());
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://localhost:3000/save";
         HttpEntity<ToDoList> httpEntity = new HttpEntity<ToDoList>(toDoList);
